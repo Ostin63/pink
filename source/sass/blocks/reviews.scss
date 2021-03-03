@@ -1,0 +1,159 @@
+.reviews__container {
+  @include container;
+  padding-bottom: 30px;
+
+  @media (min-width: $desktop-width) {
+    position: relative;
+
+    @include container-desktop;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+}
+
+.reviews__list {
+  @include list-style;
+
+  @media (min-width: $tablet-width) {
+    margin-top: 80px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-top: 72px;
+  }
+}
+
+.reviews__list blockquote {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.reviews__list .reviews__item:nth-child(2),
+.reviews__list .reviews__item:nth-child(3) {
+  display: none;
+}
+
+.reviews__item {
+  @media (min-width: $desktop-width) {
+    margin: 0 126px;
+  }
+}
+
+.reviews__item-svg {
+  display: none;
+
+  @media (min-width: $desktop-width) {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.reviews__item-name {
+  display: inline-block;
+  margin-top: 41px;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: bold;
+  text-align: center;
+
+  @media (min-width: $tablet-width) {
+    order: 2;
+    font-size: 20px;
+    margin-top: 37px;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 24px;
+    margin-top: 38px;
+  }
+}
+
+.reviews__item-info {
+  display: none;
+
+  @media (min-width: $tablet-width) {
+    display: block;
+    order: 3;
+    font-size: 14px;
+    line-height: 30px;
+    color: $dark-blu-sky;
+    text-align: center;
+    margin: 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 18px;
+  }
+}
+
+.reviews__item-text {
+  margin: 0;
+  margin-top: 13px;
+  font-size: 14px;
+  line-height: 30px;
+  color: $dark-blu-sky;
+  text-align: center;
+
+  @media (min-width: $tablet-width) {
+    margin-top: 15px;
+    font-size: 18px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-top: 45px;
+  }
+}
+
+.reviews__toggles {
+  margin: 32px auto 0 auto;
+
+  @media (min-width: $tablet-width) {
+    margin-top: 35px;
+  }
+}
+
+.reviews__button {
+  &-next,
+  &-back {
+    display: none;
+
+    @media (min-width: $desktop-width) {
+      display: block;
+      position: absolute;
+      width: 22px;
+      height: 41px;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+    }
+  }
+
+  &-next {
+    @media (min-width: $desktop-width) {
+      top: 138px;
+      left: 25px;
+    }
+  }
+
+  &-back {
+    @media (min-width: $desktop-width) {
+      top: 139px;
+      right: 25px;
+      transform: rotate(180deg);
+    }
+  }
+
+  &-svg {
+    opacity: 0.3;
+
+    &:hover {
+      opacity: 0.6;
+    }
+
+    &:active {
+      opacity: 0.1;
+    }
+  }
+}

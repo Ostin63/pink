@@ -1,0 +1,43 @@
+.main-slogan {
+  @include container;
+  margin-top: 40px;
+
+  @media (min-width: $tablet-width) {
+    margin-top: 50px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-top: 65px;
+  }
+}
+
+.main-slogan__text {
+  font-size: 24px;
+  line-height: 120%;
+  font-weight: 300;
+  margin: 0 0 25px 0;
+  color: $dark-blu-sky;
+  text-align: center;
+
+  &:last-child {
+    margin-top: 35px;
+  }
+
+  @media (min-width: $tablet-width) {
+    font-size: 40px;
+    line-height: auto;
+    margin: 0;
+
+    &:last-child {
+      margin: 5px 0 35px 0;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 50px;
+
+    &:last-child {
+      line-height: 130%;
+    }
+  }
+}

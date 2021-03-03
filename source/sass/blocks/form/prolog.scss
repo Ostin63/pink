@@ -1,0 +1,29 @@
+.prolog {
+  @include container;
+
+  padding-top: 30px;
+  font-size: 14px;
+  line-height: 30px;
+  color: $dark-blu-sky;
+  text-align: center;
+
+  span {
+    display: none;
+  }
+
+  @media (min-width: $tablet-width) {
+    font-size: 18px;
+    padding: 73px 65px 35px 65px;
+
+    span {
+      display: inline;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    @include container;
+    max-width: 920px;
+    padding: 90px 222px 70px 222px;
+    margin: 0 auto;
+  }
+}

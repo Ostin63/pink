@@ -1,0 +1,30 @@
+//colors
+$black: #000000;
+$white: #ffffff;
+$grey: #f2f2f2;
+$dark-blu-sky: #283645;
+$dark-blu-sky-dif: #1d2631;
+$pink: #d22856;
+$very-light-shade-grey: #dedede;
+$very-light-shade-grey-dif: #efefef;
+$very-light-shade-grey-dif2: #e5e5e5;
+$green: #2aab6d;
+$green-hover: #1c9b5e;
+//viewports
+$mobile-width: 320px;
+$tablet-width: 660px;
+$desktop-width: 960px;
+//mixin
+@mixin container {
+  padding: 0 20px;
+}
+
+@mixin container-desktop {
+  padding: 0 20px;
+}
+
+@mixin list-style {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

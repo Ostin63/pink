@@ -1,0 +1,128 @@
+.app {
+  background-color: $grey;
+  margin-top: 43px;
+  padding-top: 25px;
+
+  @media (min-width: $tablet-width) {
+    background-color: $white;
+    padding: 0;
+    margin: 68px 20px 25px 20px;
+    border-radius: 3px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin: 10px auto 0 75px;
+  }
+}
+
+.app__container {
+  @include container;
+}
+
+.app__title {
+  font-size: 14px;
+  line-height: 18px;
+  color: $pink;
+  text-align: center;
+  text-transform: uppercase;
+
+  @media (min-width: $tablet-width) {
+    position: absolute;
+    display: block;
+    width: 360px;
+    margin: -10px 105px 0 108px;
+    background-color: $white;
+
+    br {
+      display: none;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    margin: -10px 50px 0 15px;
+  }
+}
+
+.app__list {
+  @include list-style;
+  padding-top: 25px;
+
+  @media (min-width: $tablet-width) {
+    padding: 57px 0 58px 37px;
+  }
+
+  @media (min-width: $desktop-width) {
+    // padding: 0;
+    padding-left: 50px;
+  }
+}
+
+.app__item {
+  position: relative;
+  padding-bottom: 45px;
+
+  @media (min-width: $tablet-width) {
+    &:last-of-type {
+      padding-bottom: 0;
+    }
+  }
+}
+
+.app__name {
+  font-size: 18px;
+  line-height: 30px;
+  color: $dark-blu-sky;
+  padding-left: 70px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 37px;
+    height: 37px;
+    top: -5px;
+    left: 0;
+    border: 2px solid $very-light-shade-grey-dif2;
+    border-radius: 50%;
+    background-color: $white;
+  }
+
+  &::after {
+    display: none;
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 8px;
+    left: 13px;
+    border-radius: 50%;
+    background-color: $pink;
+  }
+
+  &:hover {
+    &::before {
+      border-color: $dark-blu-sky;
+    }
+  }
+
+  &:active {
+    &::before {
+      border-color: $pink;
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    padding-left: 62px;
+  }
+}
+
+.app__radio:checked + label::after {
+  display: block;
+}
+
+.app__radio:disabled + label::before {
+  background-color: $grey;
+}
+
+.app__radio:focus + label::before {
+  outline: 2px solid $pink;
+}

@@ -1,0 +1,124 @@
+.effect {
+  display: none;
+
+  @media (min-width: $tablet-width) {
+    display: block;
+  }
+
+  @media (min-width: $desktop-width) {
+    background-color: $grey;
+  }
+}
+
+.effect__container {
+  @include container;
+  display: flex;
+  margin-top: 60px;
+
+  @media (min-width: $desktop-width) {
+    @include container-desktop;
+    max-width: 940px;
+    margin: 0 auto;
+    padding-top: 50px;
+    padding-bottom: 68px;
+  }
+}
+
+.effect__diagram {
+  display: block;
+  position: relative;
+
+  &-desktop {
+    display: none;
+  }
+
+  @media (min-width: $desktop-width) {
+    &-tablet {
+      display: none;
+    }
+
+    &-desktop {
+      display: block;
+    }
+  }
+}
+
+.effect__diagram-number {
+  position: absolute;
+  top: -23px;
+  left: 64px;
+  font-size: 96px;
+  line-height: 163px;
+  font-weight: bold;
+  color: $pink;
+
+  @media (min-width: $desktop-width) {
+    font-size: 120px;
+    top: -8px;
+    left: 82px;
+  }
+}
+
+.effect__text {
+  margin-left: 72px;
+  margin-top: 42px;
+
+  @media (min-width: $desktop-width) {
+    margin-top: 90px;
+  }
+}
+
+.effect__text-heading {
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: bold;
+  margin: 0;
+
+  @media (min-width: $desktop-width) {
+    br {
+      display: none;
+    }
+  }
+}
+
+.effect__text-fact {
+  font-size: 14px;
+  line-height: 24px;
+  color: $dark-blu-sky;
+  margin-top: 10px;
+
+  br {
+    display: none;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 18px;
+    line-height: 30px;
+    margin-top: 26px;
+
+    br {
+      display: inline;
+    }
+  }
+}
+
+.effect__text-link {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 24px;
+  color: $pink;
+
+  &:hover {
+    color: $dark-blu-sky;
+  }
+
+  &:active {
+    color: transparentize($color: $dark-blu-sky, $amount: 0.7);
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 18px;
+    line-height: 30px;
+    margin-top: 10px;
+  }
+}

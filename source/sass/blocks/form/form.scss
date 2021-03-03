@@ -1,0 +1,135 @@
+@mixin fieldset-none {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex-wrap: wrap;
+
+  @media (min-width: $desktop-width) {
+    flex-direction: row;
+  }
+}
+
+.form__your-name {
+  @include fieldset-none;
+
+  @media (min-width: $tablet-width) {
+    order: 1;
+  }
+
+  @media (min-width: $desktop-width) {
+    // width: 35%;
+    width: 431px;
+    // outline: 1px solid black;
+    padding-right: 0;
+  }
+}
+
+.form__progress {
+  @include fieldset-none;
+
+  @media (min-width: $tablet-width) {
+    order: 4;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 100%;
+  }
+}
+
+.form__contacts {
+  @include fieldset-none;
+
+  @media (min-width: $tablet-width) {
+    order: 3;
+    // border: 2px solid $very-light-shade-grey-dif2;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 100%;
+  }
+}
+
+.form__app {
+  @include fieldset-none;
+
+  @media (min-width: $tablet-width) {
+    order: 2;
+    border: 2px solid $very-light-shade-grey-dif2;
+  }
+
+  @media (min-width: $desktop-width) {
+    // width: 32%;
+    width: 431px;
+    // outline: 1px solid black;
+  }
+}
+
+.form__emotion {
+  @include fieldset-none;
+
+  @media (min-width: $tablet-width) {
+    order: 5;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 100%;
+  }
+}
+
+.form__footer {
+  @include container;
+  padding-top: 42px;
+  padding-bottom: 10px;
+
+  @media (min-width: $tablet-width) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    order: 6;
+    padding-top: 50px;
+    padding-bottom: 55px;
+  }
+
+  @media (min-width: $desktop-width) {
+    max-width: 940px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 49px 0 0 0;
+  }
+}
+
+.form__footer-button {
+  @media (min-width: $tablet-width) {
+    width: 300px;
+    margin-top: 12px;
+  }
+}
+
+.form__footer-legend {
+  font-size: 14px;
+  line-height: 30px;
+  color: $dark-blu-sky;
+  text-transform: uppercase;
+  text-align: center;
+  padding-top: 20px;
+
+  &::first-letter {
+    // color: $pink;
+  }
+
+  span {
+    display: none;
+  }
+
+  @media (min-width: $desktop-width) {
+    span {
+      display: inline;
+    }
+  }
+}

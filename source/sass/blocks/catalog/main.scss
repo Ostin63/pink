@@ -1,0 +1,43 @@
+.main__header-text,
+.main__info-text {
+  font-size: 14px;
+  line-height: 30px;
+  color: $dark-blu-sky;
+  text-align: center;
+  padding: 30px 20px 35px 20px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 18px;
+    // outline: 1px solid red;
+    padding: 73px 100px 60px 100px;
+
+    br {
+      display: none;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-bottom: 70px;
+
+    br {
+      display: inline;
+    }
+  }
+}
+
+.main__info-text {
+  padding-bottom: 25px;
+
+  @media (min-width: $tablet-width) {
+    padding-top: 48px;
+    padding-bottom: 50px;
+
+    br {
+      display: inline;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-top: 43px;
+  }
+}

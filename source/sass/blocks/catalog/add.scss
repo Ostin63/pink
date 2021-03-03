@@ -1,0 +1,356 @@
+.add {
+  background-color: $grey;
+  padding-top: 20px;
+
+  @media (min-width: $tablet-width) {
+    padding-top: 58px;
+    padding-bottom: 40px;
+    margin-bottom: 5px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 55px 0;
+    max-width: 940px;
+    margin: 0 auto 28px auto;
+  }
+}
+
+.add__container {
+  @include container;
+
+  @media (min-width: $tablet-width) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto;
+    max-width: 620px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: $desktop-width) {
+    max-width: 100%;
+  }
+}
+
+.add__photo {
+  width: 100%;
+
+  @media (min-width: $tablet-width) {
+    width: 300px;
+    height: 400px;
+    grid-column: 1/2;
+    grid-row: 1/3;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-left: 60px;
+  }
+}
+
+.add__list {
+  @include list-style;
+
+  position: relative;
+  display: flex;
+  width: 280px;
+  // justify-content: space-around;
+  // outline: 1px solid black;
+  margin: 0 auto;
+  min-height: 155px;
+
+  @media (min-width: $tablet-width) {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-left: 30px;
+    // min-height: 180px;
+    height: 80%;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 100%;
+    margin-left: -10px;
+    margin-top: -10px;
+  }
+}
+
+.add__item {
+  max-height: 120px;
+  // outline: 1px solid black;
+  margin-left: 36px;
+
+  &:nth-child(2),
+  &:last-child {
+    .add__range {
+      display: none;
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    // height: 100%;
+    display: flex;
+    // align-items: center;
+    margin-left: 0;
+    // outline: 1px solid green;
+
+    &:nth-child(2),
+    &:last-child {
+      .add__range {
+        display: block;
+      }
+    }
+
+    &:nth-child(2),
+    &:nth-child(3) {
+      margin-top: 30px;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    &:nth-child(2) {
+      margin-top: 10px;
+    }
+
+    &:nth-child(3) {
+      margin-top: 8px;
+    }
+  }
+}
+
+.add__item-img {
+  height: 100%;
+  fill: transparentize($color: $dark-blu-sky, $amount: 0.7);
+  // outline: 1px solid black;
+
+  &:hover {
+    fill: transparentize($color: $dark-blu-sky, $amount: 0.5);
+  }
+
+  &--active {
+    fill: $pink;
+
+    &:hover {
+      fill: $pink;
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    fill: $pink;
+
+    &-crop {
+      margin-top: 9px;
+      margin-left: 9px;
+      width: 22px;
+      height: 22px;
+    }
+
+    &-fill {
+      margin-top: 12px;
+      margin-left: 8px;
+      width: 24px;
+      height: 22px;
+    }
+
+    &-contrast {
+      margin-top: 11px;
+      margin-left: 12px;
+      width: 16px;
+      height: 16px;
+    }
+
+    &:hover {
+      fill: $pink;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    &-crop {
+      // margin-left: -30px;
+      width: 44px;
+      height: 44px;
+    }
+
+    &-fill {
+      margin-top: 10px;
+      // margin-left: -27px;
+      width: 48px;
+      height: 43px;
+    }
+
+    &-contrast {
+      margin-top: 15px;
+      margin-left: 15px;
+      width: 32px;
+      height: 32px;
+    }
+  }
+}
+
+.add__range {
+  // outline: 2px solid red;
+  // padding: 20px 0;
+
+  &-scale {
+    display: block;
+    position: absolute;
+    width: 85.5%;
+    height: 2px;
+    bottom: 33px;
+    left: 20px;
+    right: 20px;
+    margin: 0 auto;
+    background-color: $dark-blu-sky;
+
+    &-bar {
+      display: block;
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      bottom: -7px;
+      right: 33px;
+      border: 2px solid $pink;
+      border-radius: 50%;
+      background-color: $white;
+
+      &--active {
+        background-color: $pink;
+      }
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    position: relative;
+    margin: 20px 20px 20px auto;
+    width: 200px;
+
+    &-scale {
+      position: relative;
+      width: 100%;
+      left: 0;
+      bottom: 0;
+      right: 0;
+    }
+
+    &-scale-bar {
+      position: absolute;
+      bottom: -5px;
+
+      &--active {
+        background-color: $white;
+      }
+
+      &-crop {
+        right: 40px;
+      }
+
+      &-fill {
+        bottom: -8px;
+        right: 160px;
+      }
+
+      &-contrast {
+        right: 90px;
+      }
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 288px;
+    margin: 30px 60px 30px auto;
+
+    &-scale-bar {
+      &-crop {
+        right: 205px;
+      }
+
+      &-fill {
+        right: 28px;
+      }
+
+      &-contrast {
+        right: 115px;
+      }
+    }
+  }
+}
+
+.add__buttons {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 0 30px 0;
+  margin-bottom: 5px;
+  // outline: 1px solid black;
+
+  &-item {
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: bold;
+    color: $pink;
+    height: 55px;
+    border: 3px solid $pink;
+    border-radius: 40px;
+    padding: 15px 0 15px 0;
+    margin-bottom: 12px;
+    cursor: pointer;
+
+    &:hover {
+      color: $white;
+      background-color: $pink;
+    }
+
+    &:active {
+      color: transparentize($color: $white, $amount: 0.7);
+    }
+
+    &-cancel {
+      color: transparentize($color: $dark-blu-sky, $amount: 0.9);
+      border-color: transparentize($color: $dark-blu-sky, $amount: 0.9);
+
+      &:hover {
+        color: transparentize($color: $dark-blu-sky, $amount: 0.7);
+        border-color: transparentize($color: $dark-blu-sky, $amount: 0.7);
+      }
+
+      &:active {
+        background-color: transparentize($color: $dark-blu-sky, $amount: 0.7);
+      }
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    // outline: 1px solid red;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    margin-left: 37px;
+    margin-right: 10px;
+    padding: 0;
+    margin-top: -140px;
+    // padding: 0;
+
+    &-item {
+      width: 260px;
+
+      &:first-child {
+        margin-bottom: 23px;
+      }
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    margin-top: -60px;
+    // margin-left: 30px;
+
+    &-item {
+      width: 183px;
+      margin: 0;
+
+      &:first-child {
+        margin-bottom: 0;
+        margin-right: 45px;
+      }
+    }
+  }
+}
