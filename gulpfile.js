@@ -20,6 +20,7 @@ const styles = () => {
     .pipe(plumber())
     .pipe(sourcemap.init())
     .pipe(sass())
+    .pipe(gulp.dest("build/css"))
     .pipe(postcss([
       autoprefixer(),
       csso()
@@ -39,7 +40,7 @@ const html = () => {
     .pipe(htmlmin({
       collapseWhitespace: true
     }))
-  .pipe(gulp.dest("build"))
+    .pipe(gulp.dest("build"))
 }
 
 exports.html = html;
@@ -49,8 +50,12 @@ exports.html = html;
 const images = () => {
   return gulp.src("source/img/**/*.{png,jpg,svg}")
     .pipe(imagemin([
-      imagemin.mozjpeg({progressive: true}),
-      imagemin.optipng({optimizationLevel: 3}),
+      imagemin.mozjpeg({
+        progressive: true
+      }),
+      imagemin.optipng({
+        optimizationLevel: 3
+      }),
       imagemin.svgo()
     ]))
     .pipe(gulp.dest("build/img"))
@@ -62,19 +67,21 @@ exports.images = images;
 
 const createWebp = () => {
   return gulp.src("source/img/**/*.{jpg,png}")
-  .pipe(webp({quality: 90}))
-  .pipe(gulp.dest("build/img"))   //папка?
+    .pipe(webp({
+      quality: 90
+    }))
+    .pipe(gulp.dest("build/img")) //папка?
 }
 
 exports.createWebp = createWebp;
 
-//Sprite
+// Sprite
 
 const sprite = () => {
   return gulp.src("source/img/*.svg")
-  .pipe(svgstore())
-  .pipe(rename("sprite.svg"))
-  .pipe(gulp.dest("build/img"))
+    .pipe(svgstore())
+    .pipe(rename("sprite.svg"))
+    .pipe(gulp.dest("build/img"))
 }
 
 exports.sprite = sprite;
@@ -83,14 +90,13 @@ exports.sprite = sprite;
 
 const copy = () => {
   return gulp.src([
-    "source/fonts/*.{woff2,woff}",
-    "source/*.ico",
-    "source/img/**/*.{jpg,png,svg}"
-  ],
-  {
-    base: "source"
-  })
-  .pipe(gulp.dest("build"));
+      "source/fonts/*.{woff2,woff}",
+      "source/*.ico",
+      "source/img/**/*.{jpg,png,svg}"
+    ], {
+      base: "source"
+    })
+    .pipe(gulp.dest("build"));
 }
 
 exports.copy = copy;
@@ -131,7 +137,7 @@ const reload = done => {
 // Watcher
 
 const watcher = () => {
-  gulp.watch("source/sass/**/*.scss", gulp.series("styles"));
+  gulp.watch("source/sass/**/*.scss", gulp.series(styles));
   gulp.watch("source/*.html", gulp.series(html, reload));
 }
 
@@ -151,6 +157,7 @@ const build = gulp.series(
 
 exports.build = build;
 
+// Default
 
 exports.default = gulp.series(
   clean,
@@ -162,6 +169,7 @@ exports.default = gulp.series(
     createWebp
   ),
   gulp.series(
-    server, watcher
+    server,
+    watcher
   )
 )
