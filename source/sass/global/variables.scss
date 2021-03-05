@@ -10,11 +10,15 @@ $very-light-shade-grey-dif: #efefef;
 $very-light-shade-grey-dif2: #e5e5e5;
 $green: #2aab6d;
 $green-hover: #1c9b5e;
+
 //viewports
+
 $mobile-width: 320px;
 $tablet-width: 660px;
 $desktop-width: 960px;
+
 //mixin
+
 @mixin container {
   padding: 0 20px;
 }
